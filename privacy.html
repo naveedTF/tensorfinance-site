@@ -42,12 +42,12 @@
             width: 50px;
         }
 
-        .brand-title {
+        .brand .title {
             font-size: 18px;
             font-weight: bold;
         }
 
-        .brand-subtitle {
+        .brand .subtitle {
             font-size: 14px;
             opacity: 0.9;
         }
@@ -64,7 +64,7 @@
             text-decoration: underline;
         }
 
-        /* BURGER MENU */
+        /* BURGER */
         .hamburger {
             display: none;
             flex-direction: column;
@@ -92,7 +92,7 @@
             transform: translateY(-8px) rotate(-45deg);
         }
 
-        /* MOBILE DROPDOWN — WHITE BACKGROUND */
+        /* MOBILE MENU – WHITE DROPDOWN */
         .mobile-menu {
             display: none;
             flex-direction: column;
@@ -116,12 +116,8 @@
         }
 
         @media (max-width: 780px) {
-            nav.desktop-nav {
-                display: none;
-            }
-            .hamburger {
-                display: flex;
-            }
+            nav.desktop-nav { display: none; }
+            .hamburger { display: flex; }
         }
 
         /* CONTENT */
@@ -163,7 +159,6 @@
         function toggleMenu() {
             const menu = document.getElementById("mobileMenu");
             const burger = document.getElementById("burgerBtn");
-
             const isOpen = menu.style.maxHeight !== "0px" && menu.style.maxHeight !== "";
 
             if (isOpen) {
@@ -185,8 +180,8 @@
         <div class="brand">
             <img src="logo-tensor-finance.svg" class="logo" alt="Tensor Finance Logo" />
             <div>
-                <div class="brand-title">Tensor Finance Ltd</div>
-                <div class="brand-subtitle">Mortgage & Property Finance Support</div>
+                <div class="title">Tensor Finance Ltd</div>
+                <div class="subtitle">Mortgage & Property Finance Support</div>
             </div>
         </div>
 
@@ -216,45 +211,52 @@
     <h1>Privacy Policy</h1>
 
     <p>
-        Tensor Finance Ltd is committed to protecting your personal information.
-        This policy explains how we collect, use, store, and safeguard your data
-        in line with UK data protection regulations.
+        Tensor Finance Ltd is committed to protecting your personal information and handling your 
+        data responsibly. This Privacy Policy explains how we collect, use, store, and safeguard 
+        your information in line with UK data protection laws.
     </p>
 
     <h2>Information We Collect</h2>
     <p>
-        We may collect personal and financial information required to assess
-        mortgage and finance options, including contact details, financial data,
-        and relevant documentation.
+        We may collect personal, financial, and identification information necessary to assess 
+        mortgage and property finance options. This can include contact details, financial documents, 
+        income information, and case-related records.
     </p>
 
     <h2>How We Use Your Information</h2>
     <p>
-        Information is used solely for providing mortgage and finance support,
-        assessing product suitability, meeting regulatory obligations, and
-        communicating updates related to your enquiry or application.
+        Your information is used solely for:
     </p>
+    <ul>
+        <li>supporting your mortgage or finance enquiry;</li>
+        <li>assessing suitability and lender requirements;</li>
+        <li>meeting regulatory obligations; and</li>
+        <li>communicating updates relating to your case.</li>
+    </ul>
 
     <h2>Sharing Your Information</h2>
     <p>
-        We may share information with lenders, credit reference agencies, and our
-        authorised mortgage network when necessary to process your application.
-        We do not sell your data to third parties.
+        We may share your information with lenders, credit reference agencies, and our authorised 
+        mortgage network where required to process your application. We do not sell or distribute 
+        your information to unrelated third parties.
     </p>
 
     <h2>Your Rights</h2>
     <p>
-        You may request access to, correction of, or deletion of your personal
-        information at any time by contacting us.
+        You have the right to request access to your information, request corrections, or ask for 
+        deletion where permitted by law. You may contact us at any time with such requests.
     </p>
 
     <h2>Contact</h2>
-    <p>Email: <strong>info@tensorfinance.co.uk</strong></p>
+    <p>
+        If you have any questions regarding this policy or how your data is handled, you may contact us at:<br>
+        <strong>info@tensorfinance.co.uk</strong>
+    </p>
 </div>
 
 <!-- FOOTER -->
 <footer class="footer">
-    Tensor Finance Ltd — Mortgage & Property Finance Support<br/>
+    Tensor Finance Ltd — Mortgage & Property Finance Support<br />
     All regulated mortgage services are delivered through an authorised UK mortgage network.
 </footer>
 
