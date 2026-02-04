@@ -1,119 +1,188 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About | Tensor Finance Ltd</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About | Tensor Finance Ltd</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background: #f5f6fa;
+      color: #1f2937;
+      line-height: 1.6;
+    }
 
-    <style>
-        body {
-            margin: 0;
-            font-family: Arial, Helvetica, sans-serif;
-            background: #f3f4f6;
-            color: #1f2937;
-            line-height: 1.6;
-        }
+    /* NAVIGATION */
+    .header {
+      background: #0f2a44;
+      color: white;
+      padding: 14px 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
 
-        .header {
-            background: #0f2a44;
-            padding: 14px 28px;
-            color: white;
-        }
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
 
-        .brand {
-            max-width: 1100px;
-            margin: auto;
-            display: flex;
-            align-items: center;
-            gap: 18px;
-        }
+    .brand img {
+      width: 48px;
+    }
 
-        .logo {
-            width: 60px;
-        }
+    .brand-name {
+      font-size: 18px;
+      font-weight: bold;
+    }
 
-        .nav a {
-            color: #d1d5db;
-            margin-left: 18px;
-            text-decoration: none;
-            font-size: 15px;
-        }
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin-left: 24px;
+      font-size: 16px;
+    }
 
-        .nav a:hover {
-            color: white;
-        }
+    /* MOBILE MENU */
+    .menu-btn {
+      display: none;
+      font-size: 28px;
+      cursor: pointer;
+      color: white;
+    }
 
-        .container {
-            max-width: 1100px;
-            margin: 40px auto;
-            padding: 0 20px;
-        }
+    .mobile-menu {
+      display: none;
+      flex-direction: column;
+      background: #0f2a44;
+      padding: 12px 24px;
+    }
 
-        h1 {
-            font-size: 32px;
-            color: #0f2a44;
-        }
+    .mobile-menu a {
+      padding: 10px 0;
+      border-bottom: 1px solid #1f3a56;
+      text-decoration: none;
+      color: white;
+    }
 
-        p {
-            font-size: 17px;
-        }
+    @media (max-width: 780px) {
+      nav {
+        display: none;
+      }
+      .menu-btn {
+        display: block;
+      }
+      .mobile-menu {
+        display: none;
+      }
+      .mobile-menu.show {
+        display: flex;
+      }
+    }
 
-        footer {
-            margin-top: 50px;
-            background: #0f2a44;
-            color: #d1d5db;
-            padding: 20px;
-            font-size: 14px;
-        }
-    </style>
+    /* PAGE CONTENT */
+    .container {
+      max-width: 900px;
+      margin: 40px auto;
+      padding: 0 20px;
+    }
+
+    h1 {
+      font-size: 32px;
+      margin-bottom: 20px;
+      color: #0f2a44;
+      font-weight: bold;
+    }
+
+    h2 {
+      margin-top: 32px;
+      color: #0f2a44;
+      font-weight: bold;
+    }
+
+    /* FOOTER */
+    footer {
+      background: #0f2a44;
+      padding: 18px;
+      color: white;
+      text-align: center;
+      margin-top: 60px;
+      font-size: 14px;
+    }
+  </style>
+
+  <script>
+    function toggleMenu() {
+      const menu = document.getElementById("mobileMenu");
+      menu.classList.toggle("show");
+    }
+  </script>
 </head>
 
 <body>
 
-    <header class="header">
-        <div class="brand">
-            <img src="logo-tensor-finance.svg" alt="Tensor Finance Logo" class="logo">
-            <div>
-                <strong>Tensor Finance Ltd</strong><br>
-                Mortgage & Property Finance Support
-            </div>
-            <nav class="nav" style="margin-left:auto;">
-                <a href="index.html">Home</a>
-                <a href="about.html">About</a>
-                <a href="privacy.html">Privacy</a>
-            </nav>
-        </div>
-    </header>
+  <!-- NAVIGATION -->
+  <div class="header">
+    <div class="brand">
+      <img src="logo-tensor-finance.svg" alt="Tensor Logo" />
+      <div class="brand-name">Tensor Finance Ltd</div>
+    </div>
 
-    <section class="container">
-        <h1>About Tensor Finance Ltd</h1>
+    <div class="menu-btn" onclick="toggleMenu()">☰</div>
 
-        <p>
-            Tensor Finance Ltd provides mortgage and property finance support for individuals and property investors, delivering services through an authorised UK mortgage network.
-        </p>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="privacy.html">Privacy</a>
+    </nav>
+  </div>
 
-        <p>
-            The firm is led by a CeMAP-qualified professional with extensive experience in residential and investment finance. Tensor Finance is committed to delivering clear, reliable guidance tailored to clients’ personal and investment needs.
-        </p>
+  <!-- MOBILE MENU -->
+  <div id="mobileMenu" class="mobile-menu">
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="privacy.html">Privacy</a>
+  </div>
 
-        <h2>Our Mission</h2>
-        <p>
-            To provide calm, structured, and expert financial guidance that supports informed decision-making for homebuyers and property investors.
-        </p>
+  <!-- PAGE CONTENT -->
+  <div class="container">
+    <h1>About Tensor Finance Ltd</h1>
 
-        <h2>Our Values</h2>
-        <ul>
-            <li>Professional, transparent communication</li>
-            <li>Commitment to ethical and compliant practice</li>
-            <li>Support tailored to each client’s goals</li>
-            <li>Long-term client relationships built on trust</li>
-        </ul>
-    </section>
+    <p>
+      Tensor Finance Ltd provides expert mortgage and property finance support tailored to the 
+      needs of individuals and property investors. We help clients make informed, confident decisions 
+      with clear guidance at every stage of the financing journey.
+    </p>
 
-    <footer>
-        Tensor Finance Ltd — All rights reserved.<br>
-        Regulated mortgage business is conducted through an authorised mortgage network.
-    </footer>
+    <p>
+      Our experience spans residential mortgages, investment and buy-to-let finance, and structured 
+      solutions for clients with more complex borrowing requirements.
+    </p>
+
+    <p>
+      All regulated mortgage services are delivered through an authorised UK mortgage network.
+    </p>
+
+    <h2>Our Mission</h2>
+    <p>
+      To deliver structured, clear, and reliable mortgage and finance support that empowers clients 
+      to make sound financial decisions with confidence.
+    </p>
+
+    <h2>Our Values</h2>
+    <p>
+      We believe in professionalism, transparency, and tailored support. Every client receives 
+      guidance aligned to their personal or investment objectives.
+    </p>
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    Tensor Finance Ltd — Mortgage & Property Finance Support<br />
+    All regulated mortgage services are delivered through an authorised UK mortgage network.
+  </footer>
 
 </body>
 </html>
