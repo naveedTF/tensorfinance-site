@@ -42,17 +42,17 @@
             width: 50px;
         }
 
-        .brand-title {
+        .brand .title {
             font-size: 18px;
             font-weight: bold;
         }
 
-        .brand-subtitle {
+        .brand .subtitle {
             font-size: 14px;
             opacity: 0.9;
         }
 
-        /* DESKTOP MENU */
+        /* DESKTOP NAV */
         nav.desktop-nav a {
             color: white;
             text-decoration: none;
@@ -92,7 +92,7 @@
             transform: translateY(-8px) rotate(-45deg);
         }
 
-        /* MOBILE DROPDOWN (WHITE) */
+        /* MOBILE MENU – WHITE DROPDOWN */
         .mobile-menu {
             display: none;
             flex-direction: column;
@@ -143,6 +143,11 @@
             font-size: 26px;
         }
 
+        p {
+            font-size: 18px;
+            margin-bottom: 14px;
+        }
+
         /* FOOTER */
         .footer {
             background: #0f2a44;
@@ -158,7 +163,6 @@
         function toggleMenu() {
             const menu = document.getElementById("mobileMenu");
             const burger = document.getElementById("burgerBtn");
-
             const isOpen = menu.style.maxHeight !== "0px" && menu.style.maxHeight !== "";
 
             if (isOpen) {
@@ -180,8 +184,8 @@
         <div class="brand">
             <img src="logo-tensor-finance.svg" class="logo" alt="Tensor Finance Logo" />
             <div>
-                <div class="brand-title">Tensor Finance Ltd</div>
-                <div class="brand-subtitle">Mortgage & Property Finance Support</div>
+                <div class="title">Tensor Finance Ltd</div>
+                <div class="subtitle">Mortgage & Property Finance Support</div>
             </div>
         </div>
 
@@ -211,30 +215,33 @@
     <h1>About Tensor Finance Ltd</h1>
 
     <p>
-        Tensor Finance Ltd provides expert mortgage and property finance support tailored
-        to the needs of individuals and property investors. We help clients make informed,
-        confident decisions with clear guidance at every stage of the financing journey.
+        Tensor Finance Ltd provides structured and professional mortgage and property finance 
+        support for individuals and investors. Our aim is to help clients make confident and 
+        informed decisions by offering clear guidance throughout the financing journey.
     </p>
 
     <p>
-        Our experience spans residential mortgages, investment and buy-to-let finance,
-        and structured solutions for clients with more complex borrowing requirements.
+        We support clients across residential, investment, and buy-to-let finance, and we place 
+        strong emphasis on clarity, reliability, and well-structured financial understanding.
     </p>
 
     <p>
-        All regulated mortgage services are delivered through an authorised UK mortgage network.
+        All regulated mortgage services are delivered through an authorised UK mortgage network, 
+        ensuring that clients receive advice in accordance with industry and regulatory standards.
     </p>
 
-    <h2>Our Mission</h2>
+    <h2>Our Approach</h2>
     <p>
-        To deliver structured, clear, and reliable mortgage and finance support that empowers
-        clients to make sound financial decisions with confidence.
+        We focus on understanding each client’s objectives, challenges, and long-term plans. 
+        Whether purchasing a home, refinancing, or expanding a property portfolio, our support 
+        is designed to be practical, structured, and aligned to real financial goals.
     </p>
 
-    <h2>Our Values</h2>
+    <h2>Our Commitment</h2>
     <p>
-        We believe in professionalism, transparency, and tailored support. Every client receives
-        guidance aligned to their personal or investment objectives.
+        We believe in professional conduct, transparency, and the responsible handling of client 
+        information. Every engagement is approached with care and attention, ensuring clients are 
+        supported at every stage of their mortgage or finance requirements.
     </p>
 </div>
 
