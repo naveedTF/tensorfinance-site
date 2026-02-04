@@ -1,162 +1,262 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Privacy Policy | Tensor Finance Ltd</title>
-  <style>
-    body {
-      margin: 0;
-      font-family: Arial, Helvetica, sans-serif;
-      background: #f5f6fa;
-      color: #1f2937;
-      line-height: 1.6;
-    }
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Privacy Policy | Tensor Finance Ltd</title>
 
-    /* NAVIGATION (same as other pages) */
-    .header {
-      background: #0f2a44;
-      color: white;
-      padding: 14px 24px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;
+            background: #f5f6fa;
+            color: #1f2937;
+            line-height: 1.6;
+        }
 
-    .brand {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-    }
+        /* HEADER */
+        .header {
+            background: #0f2a44;
+            padding: 16px 24px;
+            color: white;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
 
-    .brand img { width: 48px; }
-    .brand-name { font-size: 18px; font-weight: bold; }
+        .nav {
+            display: flex;
+            max-width: 1100px;
+            margin: auto;
+            justify-content: space-between;
+            align-items: center;
+        }
 
-    nav a {
-      color: white;
-      text-decoration: none;
-      margin-left: 24px;
-      font-size: 16px;
-    }
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
 
-    .menu-btn {
-      display: none;
-      font-size: 28px;
-      cursor: pointer;
-      color: white;
-    }
+        .logo {
+            width: 50px;
+        }
 
-    .mobile-menu {
-      display: none;
-      flex-direction: column;
-      background: #0f2a44;
-      padding: 12px 24px;
-    }
+        .brand-title {
+            font-size: 18px;
+            font-weight: bold;
+        }
 
-    .mobile-menu a {
-      padding: 10px 0;
-      border-bottom: 1px solid #1f3a56;
-      color: white;
-      text-decoration: none;
-    }
+        .brand-subtitle {
+            font-size: 14px;
+            opacity: 0.9;
+        }
 
-    @media (max-width: 780px) {
-      nav { display: none; }
-      .menu-btn { display: block; }
-      .mobile-menu.show { display: flex; }
-    }
+        /* DESKTOP NAV */
+        nav.desktop-nav a {
+            color: white;
+            text-decoration: none;
+            margin-left: 24px;
+            font-size: 16px;
+        }
 
-    .container {
-      max-width: 900px;
-      margin: 40px auto;
-      padding: 0 20px;
-    }
+        nav.desktop-nav a:hover {
+            text-decoration: underline;
+        }
 
-    h1 {
-      font-size: 32px;
-      margin-bottom: 20px;
-      color: #0f2a44;
-      font-weight: bold;
-    }
+        /* BURGER MENU */
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            justify-content: space-between;
+            width: 26px;
+            height: 20px;
+            cursor: pointer;
+        }
 
-    h2 {
-      margin-top: 32px;
-      color: #0f2a44;
-      font-weight: bold;
-    }
+        .hamburger div {
+            width: 100%;
+            height: 3px;
+            background: white;
+            transition: 0.4s;
+        }
 
-    footer {
-      background: #0f2a44;
-      padding: 18px;
-      color: white;
-      text-align: center;
-      margin-top: 60px;
-      font-size: 14px;
-    }
-  </style>
+        /* TRANSFORM TO X */
+        .hamburger.active div:nth-child(1) {
+            transform: translateY(8px) rotate(45deg);
+        }
+        .hamburger.active div:nth-child(2) {
+            opacity: 0;
+        }
+        .hamburger.active div:nth-child(3) {
+            transform: translateY(-8px) rotate(-45deg);
+        }
 
-  <script>
-    function toggleMenu() {
-      document.getElementById("mobileMenu").classList.toggle("show");
-    }
-  </script>
+        /* MOBILE DROPDOWN — WHITE BACKGROUND */
+        .mobile-menu {
+            display: none;
+            flex-direction: column;
+            background: white;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.35s ease;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .mobile-menu a {
+            color: #0f2a44;
+            padding: 14px 24px;
+            text-decoration: none;
+            border-top: 1px solid #eee;
+            font-size: 18px;
+        }
+
+        .mobile-menu a:hover {
+            background: #f0f4f8;
+        }
+
+        @media (max-width: 780px) {
+            nav.desktop-nav {
+                display: none;
+            }
+            .hamburger {
+                display: flex;
+            }
+        }
+
+        /* CONTENT */
+        .container {
+            max-width: 1100px;
+            margin: 30px auto;
+            padding: 0 20px;
+        }
+
+        h1 {
+            color: #0f2a44;
+            font-size: 32px;
+            margin-bottom: 16px;
+        }
+
+        h2 {
+            color: #0f2a44;
+            margin-top: 32px;
+            font-size: 26px;
+        }
+
+        p {
+            font-size: 18px;
+            margin-bottom: 14px;
+        }
+
+        /* FOOTER */
+        .footer {
+            background: #0f2a44;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin-top: 40px;
+            font-size: 14px;
+        }
+    </style>
+
+    <script>
+        function toggleMenu() {
+            const menu = document.getElementById("mobileMenu");
+            const burger = document.getElementById("burgerBtn");
+
+            const isOpen = menu.style.maxHeight !== "0px" && menu.style.maxHeight !== "";
+
+            if (isOpen) {
+                menu.style.maxHeight = "0px";
+                burger.classList.remove("active");
+            } else {
+                menu.style.maxHeight = "300px";
+                burger.classList.add("active");
+            }
+        }
+    </script>
 </head>
 
 <body>
 
-  <!-- NAVIGATION -->
-  <div class="header">
-    <div class="brand">
-      <img src="logo-tensor-finance.svg" alt="Tensor Logo" />
-      <div class="brand-name">Tensor Finance Ltd</div>
+<!-- HEADER -->
+<header class="header">
+    <div class="nav">
+        <div class="brand">
+            <img src="logo-tensor-finance.svg" class="logo" alt="Tensor Finance Logo" />
+            <div>
+                <div class="brand-title">Tensor Finance Ltd</div>
+                <div class="brand-subtitle">Mortgage & Property Finance Support</div>
+            </div>
+        </div>
+
+        <nav class="desktop-nav">
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="privacy.html">Privacy</a>
+        </nav>
+
+        <div class="hamburger" id="burgerBtn" onclick="toggleMenu()">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
     </div>
+</header>
 
-    <div class="menu-btn" onclick="toggleMenu()">☰</div>
-
-    <nav>
-      <a href="index.html">Home</a>
-      <a href="about.html">About</a>
-      <a href="privacy.html">Privacy</a>
-    </nav>
-  </div>
-
-  <div id="mobileMenu" class="mobile-menu">
+<!-- MOBILE MENU -->
+<div class="mobile-menu" id="mobileMenu">
     <a href="index.html">Home</a>
     <a href="about.html">About</a>
     <a href="privacy.html">Privacy</a>
-  </div>
+</div>
 
-  <!-- PAGE CONTENT -->
-  <div class="container">
+<!-- CONTENT -->
+<div class="container">
     <h1>Privacy Policy</h1>
 
     <p>
-      Tensor Finance Ltd is committed to protecting your personal information. 
-      This policy explains how we collect, use, store, and safeguard your data in 
-      line with UK data protection legislation.
+        Tensor Finance Ltd is committed to protecting your personal information.
+        This policy explains how we collect, use, store, and safeguard your data
+        in line with UK data protection regulations.
     </p>
 
     <h2>Information We Collect</h2>
-    <p>We may collect personal details including your name, contact information, financial details, and documentation required to assess mortgage or finance options.</p>
+    <p>
+        We may collect personal and financial information required to assess
+        mortgage and finance options, including contact details, financial data,
+        and relevant documentation.
+    </p>
 
     <h2>How We Use Your Information</h2>
-    <p>We use your information to provide mortgage and finance support, assess product suitability, meet regulatory requirements, and communicate updates about your application.</p>
+    <p>
+        Information is used solely for providing mortgage and finance support,
+        assessing product suitability, meeting regulatory obligations, and
+        communicating updates related to your enquiry or application.
+    </p>
 
     <h2>Sharing Your Information</h2>
-    <p>Your information may be shared with lenders, credit reference agencies, and our authorised mortgage network as required to process your enquiry. We do not sell your data to third parties.</p>
+    <p>
+        We may share information with lenders, credit reference agencies, and our
+        authorised mortgage network when necessary to process your application.
+        We do not sell your data to third parties.
+    </p>
 
     <h2>Your Rights</h2>
-    <p>You have the right to access, correct, restrict, or request deletion of your personal data. To exercise these rights, please contact us.</p>
+    <p>
+        You may request access to, correction of, or deletion of your personal
+        information at any time by contacting us.
+    </p>
 
     <h2>Contact</h2>
     <p>Email: <strong>info@tensorfinance.co.uk</strong></p>
-  </div>
+</div>
 
-  <!-- FOOTER -->
-  <footer>
-    Tensor Finance Ltd — Mortgage & Property Finance Support<br />
+<!-- FOOTER -->
+<footer class="footer">
+    Tensor Finance Ltd — Mortgage & Property Finance Support<br/>
     All regulated mortgage services are delivered through an authorised UK mortgage network.
-  </footer>
+</footer>
 
 </body>
 </html>
