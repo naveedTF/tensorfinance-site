@@ -1,188 +1,248 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>About | Tensor Finance Ltd</title>
-  <style>
-    body {
-      margin: 0;
-      font-family: Arial, Helvetica, sans-serif;
-      background: #f5f6fa;
-      color: #1f2937;
-      line-height: 1.6;
-    }
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>About | Tensor Finance Ltd</title>
 
-    /* NAVIGATION */
-    .header {
-      background: #0f2a44;
-      color: white;
-      padding: 14px 24px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;
+            background: #f5f6fa;
+            color: #1f2937;
+            line-height: 1.6;
+        }
 
-    .brand {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-    }
+        /* HEADER */
+        .header {
+            background: #0f2a44;
+            padding: 16px 24px;
+            color: white;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
 
-    .brand img {
-      width: 48px;
-    }
+        .nav {
+            display: flex;
+            max-width: 1100px;
+            margin: auto;
+            justify-content: space-between;
+            align-items: center;
+        }
 
-    .brand-name {
-      font-size: 18px;
-      font-weight: bold;
-    }
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
 
-    nav a {
-      color: white;
-      text-decoration: none;
-      margin-left: 24px;
-      font-size: 16px;
-    }
+        .logo {
+            width: 50px;
+        }
 
-    /* MOBILE MENU */
-    .menu-btn {
-      display: none;
-      font-size: 28px;
-      cursor: pointer;
-      color: white;
-    }
+        .brand-title {
+            font-size: 18px;
+            font-weight: bold;
+        }
 
-    .mobile-menu {
-      display: none;
-      flex-direction: column;
-      background: #0f2a44;
-      padding: 12px 24px;
-    }
+        .brand-subtitle {
+            font-size: 14px;
+            opacity: 0.9;
+        }
 
-    .mobile-menu a {
-      padding: 10px 0;
-      border-bottom: 1px solid #1f3a56;
-      text-decoration: none;
-      color: white;
-    }
+        /* DESKTOP MENU */
+        nav.desktop-nav a {
+            color: white;
+            text-decoration: none;
+            margin-left: 24px;
+            font-size: 16px;
+        }
 
-    @media (max-width: 780px) {
-      nav {
-        display: none;
-      }
-      .menu-btn {
-        display: block;
-      }
-      .mobile-menu {
-        display: none;
-      }
-      .mobile-menu.show {
-        display: flex;
-      }
-    }
+        nav.desktop-nav a:hover {
+            text-decoration: underline;
+        }
 
-    /* PAGE CONTENT */
-    .container {
-      max-width: 900px;
-      margin: 40px auto;
-      padding: 0 20px;
-    }
+        /* BURGER */
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            justify-content: space-between;
+            width: 26px;
+            height: 20px;
+            cursor: pointer;
+        }
 
-    h1 {
-      font-size: 32px;
-      margin-bottom: 20px;
-      color: #0f2a44;
-      font-weight: bold;
-    }
+        .hamburger div {
+            width: 100%;
+            height: 3px;
+            background: white;
+            transition: 0.4s;
+        }
 
-    h2 {
-      margin-top: 32px;
-      color: #0f2a44;
-      font-weight: bold;
-    }
+        /* TRANSFORM INTO X */
+        .hamburger.active div:nth-child(1) {
+            transform: translateY(8px) rotate(45deg);
+        }
+        .hamburger.active div:nth-child(2) {
+            opacity: 0;
+        }
+        .hamburger.active div:nth-child(3) {
+            transform: translateY(-8px) rotate(-45deg);
+        }
 
-    /* FOOTER */
-    footer {
-      background: #0f2a44;
-      padding: 18px;
-      color: white;
-      text-align: center;
-      margin-top: 60px;
-      font-size: 14px;
-    }
-  </style>
+        /* MOBILE DROPDOWN (WHITE) */
+        .mobile-menu {
+            display: none;
+            flex-direction: column;
+            background: white;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.35s ease;
+            border-bottom: 1px solid #ddd;
+        }
 
-  <script>
-    function toggleMenu() {
-      const menu = document.getElementById("mobileMenu");
-      menu.classList.toggle("show");
-    }
-  </script>
+        .mobile-menu a {
+            color: #0f2a44;
+            padding: 14px 24px;
+            text-decoration: none;
+            border-top: 1px solid #eee;
+            font-size: 18px;
+        }
+
+        .mobile-menu a:hover {
+            background: #f0f4f8;
+        }
+
+        @media (max-width: 780px) {
+            nav.desktop-nav {
+                display: none;
+            }
+            .hamburger {
+                display: flex;
+            }
+        }
+
+        /* CONTENT */
+        .container {
+            max-width: 1100px;
+            margin: 30px auto;
+            padding: 0 20px;
+        }
+
+        h1 {
+            color: #0f2a44;
+            font-size: 32px;
+            margin-bottom: 16px;
+        }
+
+        h2 {
+            color: #0f2a44;
+            margin-top: 32px;
+            font-size: 26px;
+        }
+
+        /* FOOTER */
+        .footer {
+            background: #0f2a44;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin-top: 40px;
+            font-size: 14px;
+        }
+    </style>
+
+    <script>
+        function toggleMenu() {
+            const menu = document.getElementById("mobileMenu");
+            const burger = document.getElementById("burgerBtn");
+
+            const isOpen = menu.style.maxHeight !== "0px" && menu.style.maxHeight !== "";
+
+            if (isOpen) {
+                menu.style.maxHeight = "0px";
+                burger.classList.remove("active");
+            } else {
+                menu.style.maxHeight = "300px";
+                burger.classList.add("active");
+            }
+        }
+    </script>
 </head>
 
 <body>
 
-  <!-- NAVIGATION -->
-  <div class="header">
-    <div class="brand">
-      <img src="logo-tensor-finance.svg" alt="Tensor Logo" />
-      <div class="brand-name">Tensor Finance Ltd</div>
+<!-- HEADER -->
+<header class="header">
+    <div class="nav">
+        <div class="brand">
+            <img src="logo-tensor-finance.svg" class="logo" alt="Tensor Finance Logo" />
+            <div>
+                <div class="brand-title">Tensor Finance Ltd</div>
+                <div class="brand-subtitle">Mortgage & Property Finance Support</div>
+            </div>
+        </div>
+
+        <nav class="desktop-nav">
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="privacy.html">Privacy</a>
+        </nav>
+
+        <div class="hamburger" id="burgerBtn" onclick="toggleMenu()">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
     </div>
+</header>
 
-    <div class="menu-btn" onclick="toggleMenu()">☰</div>
-
-    <nav>
-      <a href="index.html">Home</a>
-      <a href="about.html">About</a>
-      <a href="privacy.html">Privacy</a>
-    </nav>
-  </div>
-
-  <!-- MOBILE MENU -->
-  <div id="mobileMenu" class="mobile-menu">
+<!-- MOBILE MENU -->
+<div class="mobile-menu" id="mobileMenu">
     <a href="index.html">Home</a>
     <a href="about.html">About</a>
     <a href="privacy.html">Privacy</a>
-  </div>
+</div>
 
-  <!-- PAGE CONTENT -->
-  <div class="container">
+<!-- CONTENT -->
+<div class="container">
     <h1>About Tensor Finance Ltd</h1>
 
     <p>
-      Tensor Finance Ltd provides expert mortgage and property finance support tailored to the 
-      needs of individuals and property investors. We help clients make informed, confident decisions 
-      with clear guidance at every stage of the financing journey.
+        Tensor Finance Ltd provides expert mortgage and property finance support tailored
+        to the needs of individuals and property investors. We help clients make informed,
+        confident decisions with clear guidance at every stage of the financing journey.
     </p>
 
     <p>
-      Our experience spans residential mortgages, investment and buy-to-let finance, and structured 
-      solutions for clients with more complex borrowing requirements.
+        Our experience spans residential mortgages, investment and buy-to-let finance,
+        and structured solutions for clients with more complex borrowing requirements.
     </p>
 
     <p>
-      All regulated mortgage services are delivered through an authorised UK mortgage network.
+        All regulated mortgage services are delivered through an authorised UK mortgage network.
     </p>
 
     <h2>Our Mission</h2>
     <p>
-      To deliver structured, clear, and reliable mortgage and finance support that empowers clients 
-      to make sound financial decisions with confidence.
+        To deliver structured, clear, and reliable mortgage and finance support that empowers
+        clients to make sound financial decisions with confidence.
     </p>
 
     <h2>Our Values</h2>
     <p>
-      We believe in professionalism, transparency, and tailored support. Every client receives 
-      guidance aligned to their personal or investment objectives.
+        We believe in professionalism, transparency, and tailored support. Every client receives
+        guidance aligned to their personal or investment objectives.
     </p>
-  </div>
+</div>
 
-  <!-- FOOTER -->
-  <footer>
+<!-- FOOTER -->
+<footer class="footer">
     Tensor Finance Ltd — Mortgage & Property Finance Support<br />
     All regulated mortgage services are delivered through an authorised UK mortgage network.
-  </footer>
+</footer>
 
 </body>
 </html>
